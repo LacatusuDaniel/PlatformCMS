@@ -1,0 +1,22 @@
+<header id="home-header" [ngClass]="{'header-fixed': isFixed}">
+  <div class="container" fxLayout="row wrap" fxLayoutAlign="start center">
+    <div class="header-mobile-top" fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start center">
+      <div class="home-logo mr-1">
+          <a ><img src="assets/images/logo-full1.png" alt="Egret logo"></a>
+      </div>
+      <button mat-icon-button id="menu-toggle" (click)="toggleMenu()"><mat-icon>menu</mat-icon></button>
+    </div>
+    <div fxFlex class="top-menu">
+<!--      <button mat-button id="dashboard-topbtn" class="hometop-btn" scrollTo="portfolio-section"><strong>Works</strong></button>-->
+      <div *ngFor="let page of usedPages; let i = index">
+      <button mat-button id="dashboard-topbtn" class="hometop-btn"  (click)="scroll(page.pageId)"><strong>
+        {{ page?.pageTitle}}
+      </strong></button>
+      </div>
+      <span fxFlex></span>
+<!--      <button mat-button id="dashboard-topbtn" class="hometop-btn icon-button" onclick="location.href='http://localhost:4200/#/dashboard'" type="button">-->
+<!--        <mat-icon>person</mat-icon><strong> Go to Dashboard</strong></button>-->
+    </div>
+  </div>
+</header>
+

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="landing">
+    <app-header-admin></app-header-admin>
+    <br>
+    <br>
+    <br>
+
+    <div *ngFor="let page of allPages" >
+
+      <app-render-html [page]="page"></app-render-html>
+    </div>
+
+
+    <!--  <app-portfolio-carousel></app-portfolio-carousel>-->
+    <!--    <app-intro-two></app-intro-two>-->
+    <!--    <app-testimonials [backgroundGray]="true"></app-testimonials>-->
+    <!--    <app-services-carousel></app-services-carousel>-->
+    <!--    <app-cta></app-cta>-->
+    <!--    <app-pricings></app-pricings>-->
+    <!--    <app-contact [backgroundGray]="true"></app-contact>-->
+    <br>
+    <br>
+    <br>
+    <br>
+
+  </div>
+</div>
