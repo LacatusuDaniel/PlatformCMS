@@ -1,7 +1,7 @@
 import { Component, OnInit, HostListener, HostBinding, Inject, Input } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { WINDOW_PROVIDERS, WINDOW } from '../../../shared/helpers/window.helper';
-import { TokenStorageService} from '../_services/token-storage.service';
+
 import {HttpClient} from '@angular/common/http';
 
 
@@ -16,8 +16,7 @@ export class HeaderAdminComponent implements OnInit {
   isFixed;
   constructor(private _http: HttpClient,
     @Inject(DOCUMENT) private document: Document,
-    @Inject(WINDOW) private window: Window,
-    private tokenStorageService: TokenStorageService
+    @Inject(WINDOW) private window: Window
   ) { }
 
   ngOnInit() {

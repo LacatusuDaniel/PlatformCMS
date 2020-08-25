@@ -11,7 +11,7 @@ export class RenderHtmlComponent implements OnInit {
 
   private _page;
   private mappedCustomField= { };
-  private htmlData: SafeHtml;
+
 
   @Input()
   set page(val: any ) {
@@ -33,7 +33,7 @@ export class RenderHtmlComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
-    this.htmlData = this.sanitizer.bypassSecurityTrustHtml(this.page );
+
   }
 
   getDynamicTemplate() {
