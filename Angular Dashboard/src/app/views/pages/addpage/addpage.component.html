@@ -1,0 +1,97 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h3>SALUT {{id}}</h3>-->
+
+
+<!--<h2>{{page?.pageTitle | uppercase}} Details</h2>-->
+<!--<div><span>id: </span>{{page?.pageId}}</div>-->
+<!--<div><span>name: </span>{{page?.pageTitle}}</div>-->
+
+<!--</body>-->
+<!--</html>-->
+<p *ngIf="!pageForm.valid">Please complete all the required fields!</p>
+<div class="row">
+
+
+
+
+
+  <div class="col-md-6">
+
+
+    <div class="card">
+      <div class="card-header">
+        <strong>Add new page</strong>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="pageForm" (ngSubmit)="addPage()" class="form-horizontal">
+
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="pageTitle">Title</label>
+            <div class="col-md-9">
+              <input type="text"  formControlName="pageTitle"  id="pageTitle" name="pageTitle"  class="form-control" placeholder="Title"
+                     [ngClass]="{'is-invalid':pageForm.get('pageTitle').touched && pageForm.get('pageTitle').invalid}">
+              <div class="invalid-feedback">
+                <div>Title is required</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="templateId">Page template</label>
+            <div class="col-md-9">
+              <select id="templateId" name="templateId" (change)="changeValue($event)" formControlName="templateId"  class="form-control" >
+                <option value="0">Please select</option>
+                <option *ngFor="let template of allTemplates" [value]="template?.templateId">
+                  {{template.templateName}}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="pageContent">Page content</label>
+            <div class="col-md-9">
+              <textarea id="pageContent" formControlName="pageContent"   name="pageContent" rows="9" class="form-control" placeholder="Content.."
+                        [ngClass]="{'is-invalid':pageForm.get('pageContent').touched && pageForm.get('pageContent').invalid}"></textarea>
+              <div class="invalid-feedback">
+                <div>Page content is required</div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+<!--          <div class="form-group row">-->
+<!--            <label class="col-md-3 col-form-label" for="created-by">Created by</label>-->
+<!--            <div class="col-md-9">-->
+<!--              <input type="text" formControlName="createdBy"   id="created-by" name="created-by" class="form-control" placeholder="Disabled" disabled>-->
+<!--            </div>-->
+<!--          </div>-->
+
+          <div class="card-footer">
+            <button type="submit" class="btn btn-sm btn-primary" [disabled]="!pageForm.valid"><i class="fa fa-dot-circle-o"></i> Save</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-md-6">
+
+
+
+
+  </div><!--/.col-->
+</div><!--/.row-->
+
+
+

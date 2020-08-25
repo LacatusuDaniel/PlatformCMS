@@ -1,0 +1,45 @@
+
+<script src="pages.component.ts"></script>
+<div class="col-lg-6">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Custom field groups
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th> </th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+
+      <tr *ngFor="let customfieldgroup of allCustomFieldsGroup" >
+        <td>
+          <a [routerLink]="['/customfieldsgroup', customfieldgroup.groupId]">
+            {{customfieldgroup.groupName}}
+          </a>
+        </td>
+
+        <td>
+          <a [routerLink]="['/customfieldsgroups', customfieldgroup.groupId]">
+            Edit {{customfieldgroup.groupName}}
+          </a>
+        </td>
+      </tr>
+
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+<button (click)="gotoPage('addcustomfieldgroup')" class="btn btn-sm btn-primary" >Add new custom field group</button>
+<!--/.col-->
+
+
+

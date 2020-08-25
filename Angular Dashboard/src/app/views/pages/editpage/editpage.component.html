@@ -1,0 +1,72 @@
+
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <strong>Edit page</strong>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="pageForm" (ngSubmit)="updatePage()" class="form-horizontal">
+
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="pageTitle">Title</label>
+            <div class="col-md-9">
+              <input type="text"  formControlName="pageTitle"  id="pageTitle" name="pageTitle"  class="form-control" placeholder="Title">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="pageContent">Content</label>
+            <div class="col-md-9">
+              <textarea id="pageContent" formControlName="pageContent"   name="pageContent" rows="9" class="form-control" placeholder="Content.."></textarea>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="pageTemplate">Page template</label>
+            <div class="col-md-9">
+              <select id="pageTemplate" name="pageTemplate" (change)="changeValue($event)" formControlName="pageTemplate"  class="form-control">
+                <option value="0">Please select</option>
+                <option *ngFor="let template of allTemplates" [value]="template.templateId">
+                  {{template.templateName}}
+                </option>
+              </select>
+
+
+            </div>
+          </div>
+
+
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="created-by">Created by</label>
+            <div class="col-md-9">
+              <input type="text" formControlName="createdBy"   id="created-by" name="created-by" class="form-control" placeholder="Disabled" disabled>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="created-at">Created at</label>
+            <div class="col-md-9">
+              <input type="text" formControlName="createdDateAndTime" id="created-at" name="created-at" class="form-control" placeholder="Disabled" disabled>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Update</button>
+
+
+          </div>
+        </form>
+        <button (click)="deletePage()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Delete page</button>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="col-md-6">
+
+
+  </div><!--/.col-->
+</div><!--/.row-->
+

@@ -1,0 +1,56 @@
+<div class="app-body">
+  <main class="main d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card mx-4">
+            <div class="card-body p-4">
+              <form [formGroup]="userForm" (ngSubmit)="addUser(user)" class="form-horizontal">
+                <h1>Register</h1>
+                <p class="text-muted">Create your account</p>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-user" for="username"></i></span>
+                  </div>
+                  <input type="text"  formControlName="username"  id="username" name="username"  class="form-control" placeholder="Username" >
+
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" for="email" >@</span>
+                  </div>
+                  <input type="text"  formControlName="email"  id="email" name="email"  class="form-control" placeholder="Email">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" for="password"><i class="icon-lock"></i></span>
+                  </div>
+                  <input  matInput type="password"  formControlName="password"  id="password" name="password"  class="form-control" placeholder="Password" required>
+
+                </div>
+<!--                <mat-error *ngIf="userForm.hasError('required', 'password')">-->
+<!--                  Please enter the password!-->
+<!--                </mat-error>-->
+
+                <div class="input-group mb-4">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-lock"></i></span>
+                  </div>
+                  <input matInput type="password" formControlName="confirmPassword" class="form-control" placeholder="Repeat password" autocomplete="new-password" [errorStateMatcher]="matcher">
+
+
+                </div>
+
+                <mat-error *ngIf="userForm.hasError('notSame')">
+                  Passwords do not match!
+                </mat-error>
+                <button type="submit" class="btn btn-block btn-success">Create Account</button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

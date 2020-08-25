@@ -1,0 +1,45 @@
+
+<script src="pages.component.ts"></script>
+<div class="col-lg-6">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Custom fields
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Order</th>
+          <th>Label</th>
+          <th>CustomId</th>
+          <th>Type</th>
+        </tr>
+        </thead>
+        <tbody>
+
+      <tr *ngFor="let customfield of allCustomFields" >
+        <td>{{customfield.customFieldId}}</td>
+        <td>
+          <a [routerLink]="['/customfields', customfield.customFieldId]">
+            {{customfield.label}}
+          </a>
+        </td>
+        <td>{{customfield.customId}}</td>
+        <td>{{customfield.type}}</td>
+      </tr>
+        </tbody>
+      </table>
+
+
+      <div class="card-footer">
+         <button (click)="gotoPage('addcustomfield')" class="btn btn-sm btn-primary" >Add new custom field</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--/.col-->
+
+
+

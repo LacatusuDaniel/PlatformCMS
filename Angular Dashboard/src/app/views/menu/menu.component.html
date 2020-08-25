@@ -1,0 +1,40 @@
+<!--<div style="display: flex;">-->
+
+<!--<div class="content">-->
+<div class="example-container">
+  <h3>All pages</h3>
+</div>
+
+<div
+  cdkDropList
+  #all="cdkDropList"
+  [cdkDropListData] = "allPages"
+  [cdkDropListConnectedTo] = "[used]"
+  class="example-list"
+  (cdkDropListDropped) = "onDrop($event)" >
+  <div class="example-box" *ngFor="let page of allPages; let i = index"  cdkDrag>
+      {{page.pageTitle}}
+  </div>
+</div>
+
+<br>
+<div class="example-container">
+  <h3>Used pages</h3>
+</div>
+<div cdkDropList
+    #used="cdkDropList"
+  [cdkDropListData] = "usedPages"
+  [cdkDropListConnectedTo] = "[all]"
+     class="example-list"
+  (cdkDropListDropped) = "onDrop($event)" >
+  <div class="example-box" *ngFor="let menu of usedPages; let i = index"  cdkDrag>
+{{menu.pageTitle}}
+  </div>
+</div>
+
+<!--<div class="card-footer">-->
+<!--  <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>-->
+<!--</div>-->
+
+<button  class="fa fa-dot-circle-o" class="btn btn-sm btn-primary" (click)="save()"  ><i class="fa fa-dot-circle-o">Save</i> </button>
+<!--</div>-->

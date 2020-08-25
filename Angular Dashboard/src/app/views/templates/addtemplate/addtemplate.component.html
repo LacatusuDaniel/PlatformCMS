@@ -1,0 +1,49 @@
+<script src="addpage.component.ts"></script>
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <strong>Add new template</strong>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="templateForm" (ngSubmit)="addTemplate(template)" class="form-horizontal">
+
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="templateName">Title</label>
+            <div class="col-md-9">
+              <input type="text"  formControlName="templateName"  id="templateName" name="templateName"  class="form-control" placeholder="Template name">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="templateContent">Content</label>
+            <div class="col-md-9">
+              <textarea id="templateContent" formControlName="templateContent"   name="templateContent" rows="9" class="form-control" placeholder="Content.."></textarea>
+            </div>
+          </div>
+
+<!--          <div class="form-group row">-->
+<!--            <label class="col-md-3 col-form-label" for="userId">Created by</label>-->
+<!--            <div class="col-md-9">-->
+<!--              <input type="text" formControlName="userId"   id="userId" name="userId" class="form-control" placeholder="Disabled" >-->
+<!--            </div>-->
+<!--          </div>-->
+
+          <div class="card-footer">
+            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
+
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="col-md-6">
+
+
+
+
+  </div><!--/.col-->
+</div><!--/.row-->

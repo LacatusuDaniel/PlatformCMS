@@ -1,0 +1,41 @@
+
+<script src="pages.component.ts"></script>
+<div class="col-lg-6">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Pages
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Page title</th>
+          <th>Created By</th>
+          <th>Created at</th>
+        </tr>
+        </thead>
+        <tbody>
+
+      <tr *ngFor="let page of allPages" >
+        <td>
+          <a [routerLink]="['/pages', page.pageId]">
+            {{page.pageTitle}}
+          </a>
+        </td>
+        <td>{{page?.users?.username}}</td>
+        <td>{{page.createdDateAndTime}}</td>
+      </tr>
+        </tbody>
+      </table>
+
+
+      <div class="card-footer">
+         <button (click)="gotoPage('addpage')" class="btn btn-sm btn-primary" >Add new page</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

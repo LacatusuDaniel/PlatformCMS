@@ -1,0 +1,55 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <strong>Edit template</strong>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="templateForm" (ngSubmit)="updateTemplate()" class="form-horizontal">
+
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="templateName">Title</label>
+            <div class="col-md-9">
+              <input type="text"  formControlName="templateName"  id="templateName" name="templateName"  class="form-control" placeholder="Template name">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="templateContent">Content</label>
+            <div class="col-md-9">
+              <textarea id="templateContent" formControlName="templateContent"   name="templateContent" rows="9" class="form-control" placeholder="Content.."></textarea>
+            </div>
+          </div>
+
+<!--          <div class="form-group row">-->
+<!--            <label class="col-md-3 col-form-label" for="created-by">Created by</label>-->
+<!--            <div class="col-md-9">-->
+<!--              <input type="text" formControlName="createdBy"   id="created-by" name="created-by" class="form-control" placeholder="Disabled" disabled>-->
+<!--            </div>-->
+<!--          </div>-->
+
+
+
+
+          <div class="card-footer">
+            <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Update</button>
+            <button (click)="deleteTemplate()" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Delete template</button>
+          </div>
+
+        </form>
+      </div>
+
+
+
+    </div>
+
+  </div>
+  <div class="col-md-6">
+
+
+
+
+  </div><!--/.col-->
+</div><!--/.row-->

@@ -1,0 +1,53 @@
+
+<script src="templates.component.ts"></script>
+<div class="col-lg-6">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-align-justify"></i> Templates
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Template name</th>
+<!--          <th>Created By</th>-->
+<!--          <th>Created at</th>-->
+<!--          <th>PageURL</th>-->
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr *ngFor="let template of allTemplates" >
+          <td>
+            <a [routerLink]="['/templates', template.templateId]">
+              {{template.templateName}}
+            </a>
+          </td>
+<!--          <td>{{page.createdBy}}</td>-->
+<!--          <td>{{page.createdDateAndTime}}</td>-->
+<!--          <td>{{page.pageUrl}}</td>-->
+        </tr>
+        </tbody>
+      </table>
+
+
+
+
+      <div class="card-footer">
+        <button (click)="gotoPage('addtemplate')" class="btn btn-sm btn-primary" >Add new template</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--/.col-->
+
+<!--<ul>-->
+<!--  <li *ngFor="let page of allPages ">-->
+<!--    page:{{page|json}}-->
+<!--  </li>-->
+<!--</ul>-->
+
+
